@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>المعلم الذكي</title>
+    <meta name="description" content="منصة ذكية لمساعدة الطلاب في حل المسائل من الصور" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">AI</div>
+          <span>المعلم الذكي</span>
+        </div>
+        <nav>
+          <a href="#features">المميزات</a>
+          <a href="#how">كيف يعمل</a>
+          <a href="#demo">تجربة</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="pill">حل المسائل بسهولة</span>
+            <h1>ساعد الطالب في حل الواجبات من خلال صورة وذكاء اصطناعي</h1>
+            <p>
+              ارفع صورة السؤال، اختر صفك وسنتك، ثم استقبل شرحًا مبسطًا وخطوة بخطوة في أقل من ثوانٍ.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#demo">ابدأ الآن</a>
+              <a class="button ghost" href="#features">شاهد المميزات</a>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="phone-card">
+              <div class="screen">
+                <div class="mini-card">
+                  <span>المرحلة</span>
+                  <strong id="stage-preview">ابتدائي</strong>
+                </div>
+                <div class="mini-card">
+                  <span>السنة</span>
+                  <strong id="grade-preview">السنة 1</strong>
+                </div>
+                <div class="upload-box">
+                  <span>📷</span>
+                  <small>صورة السؤال</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features">
+        <div class="container">
+          <div class="section-title">
+            <span>مميزاتنا</span>
+            <h2>تصميم مناسب لكل مرحلة دراسية</h2>
+          </div>
+
+          <div class="feature-grid">
+            <div class="feature-box">
+              <div class="icon">📚</div>
+              <h3>المرحلة الدراسية</h3>
+              <p>ابتدائي، إعدادي، وثانوي مع اختيار السنة المناسب.</p>
+            </div>
+            <div class="feature-box">
+              <div class="icon">📷</div>
+              <h3>رفع الصور</h3>
+              <p>يمكن للطالب رفع صورة من الجهاز أو التقاط صورة مباشرة.</p>
+            </div>
+            <div class="feature-box">
+              <div class="icon">🤖</div>
+              <h3>شرح الذكاء</h3>
+              <p>يشرح الحل خطوة بخطوة ببساطة وسهولة تناسب كل طالب.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="demo" class="demo">
+        <div class="container demo-box">
+          <div class="section-title left">
+            <span>تجربة سريعة</span>
+            <h2>اختر صفك وسنتك</h2>
+          </div>
+
+          <form id="solver-form" class="solver-form">
+            <div class="field-group">
+              <label>المرحلة</label>
+              <div class="chips" id="stage-chips">
+                <button type="button" class="chip active" data-stage="primary">ابتدائي</button>
+                <button type="button" class="chip" data-stage="middle">إعدادي</button>
+                <button type="button" class="chip" data-stage="secondary">ثانوي</button>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="grade">السنة</label>
+              <select id="grade" class="select-box">
+                <option value="1">السنة 1</option>
+                <option value="2">السنة 2</option>
+                <option value="3">السنة 3</option>
+                <option value="4">السنة 4</option>
+                <option value="5">السنة 5</option>
+                <option value="6">السنة 6</option>
+              </select>
+            </div>
+
+            <div class="field-group upload-group">
+              <label for="imageUpload">ارفع صورة السؤال</label>
+              <input id="imageUpload" type="file" accept="image/*" />
+              <div class="preview-box" id="previewBox">
+                <span>لا توجد صورة محددة</span>
+              </div>
+            </div>
+
+            <button type="submit" class="button primary wide">حل السؤال</button>
+          </form>
+
+          <div class="result-box" id="resultBox">
+            <div class="result-header">
+              <span>نتيجة الحل</span>
+              <strong id="resultStage">ابتدائي</strong>
+            </div>
+            <h3>الخطوات</h3>
+            <ol id="resultSteps">
+              <li>قراءة السؤال بعناية.</li>
+              <li>تحديد المطلوب في المسألة.</li>
+              <li>استخدام القاعدة المناسبة.</li>
+              <li>التأكد من صحة النتيجة النهائية.</li>
+            </ol>
+            <div class="final-answer">
+              <h4>الإجابة النهائية</h4>
+              <p id="finalAnswer">سيظهر الحل هنا بعد رفع الصورة والضغط على زر الحل.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="how" class="steps-section">
+        <div class="container">
+          <div class="section-title center">
+            <span>كيف يعمل</span>
+            <h2>خطوات الاستخدام</h2>
+          </div>
+
+          <div class="steps-grid">
+            <div class="step">
+              <span>1</span>
+              <h3>اختيار المرحلة</h3>
+              <p>حدد إذا كنت في ابتدائي، إعدادي أو ثانوي.</p>
+            </div>
+            <div class="step">
+              <span>2</span>
+              <h3>اختيار السنة</h3>
+              <p>اختر السنة المناسبة مثل: 1، 2، 3، ...</p>
+            </div>
+            <div class="step">
+              <span>3</span>
+              <h3>رفع الصورة</h3>
+              <p>قم بتحميل صورة السؤال أو التقاط صورة مباشرة.</p>
+            </div>
+            <div class="step">
+              <span>4</span>
+              <h3>الحل</h3>
+              <p>ينتج شرحًا واضحًا مع الإجابة النهائية خطوة بخطوة.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>© 2026 المعلم الذكي</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
